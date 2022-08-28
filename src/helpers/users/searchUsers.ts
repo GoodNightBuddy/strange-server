@@ -1,14 +1,4 @@
-import { IUser } from "./createUser";
-
-type Key = string
-
-type Users = {
-  string: IUser;
-}
-
-export function searchUsersByEmail(email: string, users: Users): string[] {
-
-
+export function searchUsersByEmail(email: string, users: any): string[] {
 
   const result: string[] = [];
 
@@ -17,7 +7,6 @@ export function searchUsersByEmail(email: string, users: Users): string[] {
       result.push(users[key].name + ' ' + users[key].surname)
     }
   }
-  console.log(users);
 
   return result
 }
