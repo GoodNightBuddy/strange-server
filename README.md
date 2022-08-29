@@ -21,7 +21,8 @@ I implement that with route "/hello", method - GET. It takes a request with JSON
 Return JSON string.
 
 
-2. To previous server add another route and request with 4 parameters: email, name, surname, age. If age > 18 save email, name and surname in database(you can use any DB). Send response: "Done" if true, otherwise send error
+2. To previous server add another route and request with 4 parameters: email, name, surname, age. If age > 18 save email, name and surname in database(you can use any DB). Send response: "Done" if true, otherwise send error.
+
 I implement this with route "/users", method - POST.  It takes a request with JSON object, for example:
 {
     "name": "Tyson",
@@ -43,4 +44,5 @@ Return JSON array, where every value - full name. If email do not specified - re
 
 4. Create node.js script that will call https://reqres.in/api/users API and generate .csv file with response data.
 Headers should be - [ID, Email, First Name, Last Name]
+
 To generate csv you should send GET request to ghe route '/file'. In response you get list of all users, and generated users.csv in ./dist folder with that list.
