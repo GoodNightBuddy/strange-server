@@ -20,7 +20,7 @@ export async function getData() {
   pages = result.data.total_pages;
   users = result.data.data;
 
-  if(pages > 1) {
+  if(pages > 1) {  //we don't know the number of pages
     for(let i = 2; i <= pages; i++) {
       url.searchParams.set(searchParam, i.toString());
       requestURLs.push(url.href)

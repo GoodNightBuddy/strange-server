@@ -19,7 +19,7 @@ export class UserController {
         const { email, name, surname } = req.body;
         const response = await UsersAction.createUser({ email, name, surname });
         if (response.status === 200) {
-          res.status(201).send('Done!')
+          res.status(201).json('Done!')
         } else {
           throw new Error(response.statusText)
         }
@@ -38,9 +38,13 @@ export class UserController {
       const users = await UsersAction.getUsers();
       if(req.body.email) {
         const list = searchUsersByEmail(req.body.email, users);
-        res.status(200).send(list)
+        if(list.length === 0) {
+          res.status(200).json('No users with such email')
+        } else {
+          res.status(200).json(list)
+        }
       } else {
-        res.status(200).send(users)
+        res.status(200).json(users)
       }
     } catch (error: any) {
       res.status(error.status || 500).json(error.message);

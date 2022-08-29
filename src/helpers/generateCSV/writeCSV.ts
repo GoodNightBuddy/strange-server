@@ -4,7 +4,7 @@ import { IUserFromAPI } from './getUsersFromAPI';
 
 export function writeCSV(users: IUserFromAPI[]) {
   const csvWriter = createCsvWriter({
-    path: path.join(__dirname, '../users.csv'),
+    path: path.join(__dirname, '../../users.csv'),
     header: [
       { id: 'id', title: 'ID' },
       { id: 'email', title: 'Email' },
