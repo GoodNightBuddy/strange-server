@@ -1,8 +1,6 @@
 import { Request, Response, NextFunction } from "express"
-import nodeTest from "node:test";
-import { createUser } from "../helpers/users/createUser";
-import { getUsers } from "../helpers/users/getUsers";
-import { searchUsersByEmail } from "../helpers/users/searchUsers";
+import { UsersAction } from "../helpers/db/UsersAction";
+import { searchUsersByEmail } from "../helpers/other/searchUsers";
 
 export class UserController {
 
@@ -19,7 +17,7 @@ export class UserController {
     try {
       if (req.body.age >= 18) {
         const { email, name, surname } = req.body;
-        const response = await createUser({ email, name, surname });
+        const response = await UsersAction.createUser({ email, name, surname });
         if (response.status === 200) {
           res.status(201).send('Done!')
         } else {
@@ -37,7 +35,7 @@ export class UserController {
 
   static async getUsersListByEmail (req: Request, res: Response, next: NextFunction) {
     try {
-      const users = await getUsers();
+      const users = await UsersAction.getUsers();
       if(req.body.email) {
         const list = searchUsersByEmail(req.body.email, users);
         res.status(200).send(list)

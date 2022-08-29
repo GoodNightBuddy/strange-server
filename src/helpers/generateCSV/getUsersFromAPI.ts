@@ -11,7 +11,7 @@ export interface IUserFromAPI {
 
 export async function getData() {
   const url = new URL('https://reqres.in/api/users');
-  const searchParams = 'page'
+  const searchParam = 'page'
   const requestURLs: string[] = [];
 
   let pages: number;
@@ -22,7 +22,7 @@ export async function getData() {
 
   if(pages > 1) {
     for(let i = 2; i <= pages; i++) {
-      url.searchParams.set(searchParams, i.toString());
+      url.searchParams.set(searchParam, i.toString());
       requestURLs.push(url.href)
     }
   }
