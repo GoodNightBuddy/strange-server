@@ -12,6 +12,7 @@ It was a test task.
 My assignments were: 
 
 1. Create nodeJS server on localhost. Create route and request with 3 parameters: name, surname, age. If age > 18. Send response: "Hello <name> <surname>".
+
 I implement that with route "/hello", method - GET. It takes a request with JSON object, for example:
 {
     "name": "Tyson",
