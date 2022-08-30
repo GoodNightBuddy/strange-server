@@ -1,6 +1,6 @@
 # Simple server fot speroteck test task
 
-It was a test task.
+It was a test task. So functionality
 
 # Installation:
 1. Copy folder
