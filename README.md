@@ -1,6 +1,6 @@
 # Simple server fot speroteck test task
 
-It was a test task. So functionality is a bit specific)
+It was a test task. So functionality is a bit specific and not complicated)
 
 # Installation:
 1. Copy folder
@@ -9,7 +9,7 @@ It was a test task. So functionality is a bit specific)
 4. $ npm run build
 5. $ npm run start
 
-
+# API:
 
 1. Rroute "/hello", method - GET. It takes a request with JSON object, for example:
 {
