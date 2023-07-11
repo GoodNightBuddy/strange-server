@@ -1,4 +1,4 @@
-# Simple server fot speroteck test task
+# Simple server test task
 
 It was a test task. So functionality is a bit specific and not complicated)
 
